@@ -1,5 +1,31 @@
+Major Things
 - README.md
   - Explains how to use it
 - man page for shell
 - AUTHORS file
 - simple_shell
+
+Going through Exercises
++ PID & PPID
+  + getppid
+    # Will probably be a counter for processes
+  + Max value of process ID
+    # Might need to include this as a macros to restart the process count
++ Arguments
+  + 0-av
+    # had to iterate without ac. Might be useful later...
+  + prompt.c
+    # uses getline() function to accept user input and write to a buffer
+  + 2-Arg.c
+    # uses the strtok() function probably to split a string to an array. This is a method for iterating an array up to a delimiter. Useful function for parsing through arguments.
++ Executing a program
+  # No exercises but relatively easy to understand how to use it. Upon execution with execve(), the rest of file is not read.
+- Creating processes
+- Wait
+- Exercise: fork + wait + execve
+- Exercise: super simple shell
+- File information
+- Environment
+- main
+- Exercises
+
