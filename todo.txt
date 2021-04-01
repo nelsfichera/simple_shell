@@ -1,0 +1,5 @@
+- README.md
+  - Explains how to use it
+- man page for shell
+- AUTHORS file
+- simple_shell
