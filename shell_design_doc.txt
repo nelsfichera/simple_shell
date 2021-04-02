@@ -1,0 +1,22 @@
+shell_design_doc
+
+main() calls create_process()
+    create_process() will fork new child process
+        take string input from user
+        parse string input
+        https://jameshfisher.com/2017/02/05/how-do-i-use-execve-in-c/
+        run execve() on the parsed string
+            if execve() is -1 then use perror() to print an error message
+            return integer?
+    wait until child process completes
+        if the child process fails
+            print error message
+            return integer
+    if the process is a child()
+        do nothing, return 0
+    if the process is a parent()
+        execve(./shell) is needed to run the script again because main() can't be called iteratively or recursively without stacking. We want to avoid stack overflow.
+
+
+
+
