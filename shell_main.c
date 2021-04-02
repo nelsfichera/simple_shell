@@ -7,9 +7,7 @@
 
 int main(void)
 {
-    while (/*condition infinite condition*/)
-    {
-        /* getline() to start to get input */
-    }
+    /* create_process */
+    /* A function that starts child processes and waits until child process completes*/
     return (0);
 }
