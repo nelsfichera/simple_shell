@@ -1,9 +1,28 @@
 Major Things
 - README.md
-  - Explains how to use it
 - man page for shell
 - AUTHORS file
 - simple_shell
+
+
+
+- compile to "shell"
+
+gcc -Wall -Werror -Wextra -pedantic \
+shell_main.c \
+holberton.h \
+-o shell
+
+
+
+
+
+
+
+
+
+
+=================================================
 
 Going through Exercises
 + PID & PPID
