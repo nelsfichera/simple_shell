@@ -3,15 +3,18 @@
 
 int execute(char **commands)
 {
-	pid_t child;
+	pid_t parent_pid;
+    pid_t child_pid;
 	int status; 
+
+    /* Evaluate */
+    parent_pid = getpid();
+    child_pid = fork();
 
 	if (commands == NULL || commands[0] == NULL)
 		perror("Error: could not execute");
 
-	child = fork();
-
-	if (child == 0)
+	if (child_pid == 0)
 	{
 		if (execve(commands[0], commands, NULL) == -1)
 		{
@@ -19,9 +22,9 @@ int execute(char **commands)
 			exit(2);
 		}
 	}
-	else if (child < 0)
+	else if (child_pid < 0)
 		perror("Error");
 	else
-		wait(NULL);
-	return (EXIT_SUCCESS);
+		wait(&status); /* status is NULL by default */
+	return (1);
 }
