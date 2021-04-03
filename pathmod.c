@@ -21,7 +21,7 @@ char *pathmod(char *compath)
     /* if the executable file exists in compath */
     if (comIsPath == 0)
     {
-        if (stat(compath, &stats) == 0)
+        if (stat(compath, &stats) == 0) /* incorrect figure out a function that looks for the command
         { /* do nothing, this path exists */
             return (compath);
         }
