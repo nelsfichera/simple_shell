@@ -5,6 +5,7 @@ int execute(char **commands)
 {
 	pid_t parent_pid;
     pid_t child_pid;
+	char *pathstatus;
 
     /* Evaluate */
     parent_pid = getpid();
@@ -16,7 +17,10 @@ int execute(char **commands)
 	/* path */
 	if (child_pid == 0)
 	{
-		if (execve(commands[0], commands, NULL) == -1)
+		pathstatus = pathmod(commands[0]);
+		if (pathstatus == "bad")
+			return (0);
+		if (execve(pathmod(commands[0]), commands, NULL) == -1)
 		{
 			perror("Error");
 			exit(2);
