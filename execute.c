@@ -5,7 +5,6 @@ int execute(char **commands)
 {
 	pid_t parent_pid;
     pid_t child_pid;
-	int status; 
 
     /* Evaluate */
     parent_pid = getpid();
@@ -13,7 +12,8 @@ int execute(char **commands)
 
 	if (commands == NULL || commands[0] == NULL)
 		perror("Error: could not execute");
-
+	/* path module determines if the file exists in the given path */
+	/* path */
 	if (child_pid == 0)
 	{
 		if (execve(commands[0], commands, NULL) == -1)
@@ -25,6 +25,6 @@ int execute(char **commands)
 	else if (child_pid < 0)
 		perror("Error");
 	else
-		wait(&status); /* status is NULL by default */
+		wait(NULL);
 	return (1);
 }
