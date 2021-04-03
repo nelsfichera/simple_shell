@@ -14,17 +14,22 @@ int main(void)
 
     do
     {
-        /* read */
-        buffer = malloc(bufsize * sizeof(char));
-        if (buffer == NULL)
-        {
-            return (-1);
-        }
-        printf("SimpleShell$ ");
-        getline(&buffer, &bufsize, stdin);
-        sep = " ";
-        /* the parent process should return 1, which is True for the while loop */
-        success = execute(parse(buffer, sep), NULL);
+
+	    /* read */
+	    buffer = malloc(bufsize * sizeof(char));
+	    if (buffer == NULL)
+	    {
+		    return (-1);
+	    }
+	    printf("SimpleShell$ ");
+	    getline(&buffer, &bufsize, stdin);
+	    if (getline == "exit")
+	    {
+		   exitshell();
+	    }
+	    sep = " ";
+	    /* the parent process should return 1, which is True for the while loop */
+	    success = execute(parse(buffer, sep), NULL);
     } while (success);
 
     return (0);
