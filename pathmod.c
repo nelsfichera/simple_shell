@@ -7,26 +7,30 @@ char *pathmod(char *compath)
 {
     struct stat stats;
     char *bin = "/bin/";
-    int path_exists_flag = 1;
     int comIsPath;
     /* building an error string */
     char *environment = "bash: ";
     char *path_not_exists = ": No such file or directory";
 
+    if (compath == "cd")
+    {
+        return (compath);
+    }
     /* it would be best to determine if compath is a path or a command */
     /* ispath() function needs to be built */
     comIsPath = ispath(compath); /* returns either 1 or 0. 1 is true. 0 is false */
 
     /* stat() dumps info to struct stat stats*/
     /* if the executable file exists in compath */
-    if (comIsPath == 0)
+    if (comIsPath == 1)
     {
-        if (stat(compath, &stats) == 0)
-        { /* do nothing, this path exists */
+        if (stat(compath, &stats) == 0) /* incorrect figure out a function that looks for the command */
+        {                               /* do nothing, this path exists */
             return (compath);
         }
-        strcat(compath, ": command not found");
-        perror(compath);
+        strcat(environment, compath);
+        strcat(environment, path_not_exists);
+        perror(environment);
         return ("bad");
     }
     /* below only accounts /bin/. Needs to account for other universally exposed folders like cd/ for cd command */
@@ -35,14 +39,9 @@ char *pathmod(char *compath)
     {
         return (bin);
     }
-    else
-    {
-        path_exists_flag = 0;
-    }
     /* there can be a lot of similar checks for other universally exposed folders */
     /* build error for when path does not exist. Environment should be defined. Defined as "bash" for now*/
-    strcat(environment, compath);
-    strcat(environment, path_not_exists);
-    perror(environment);
+    strcat(compath, ": command not found");
+    perror(compath);
     return ("bad");
 }
