@@ -11,7 +11,7 @@ char *_env(const char *name, char **env)
 	{
 		while(env[x][n] == name[n])
 				n++;
-		/* without  curly braces, n just goes to the end rather than iterating over the environment list*/
+		{
 		if (env[x][n] == '=')
 		{
 			n++;
@@ -19,6 +19,7 @@ char *_env(const char *name, char **env)
 		}
 		x++;
 		n = 0;
+		}
 	}
 	write(STDOUT_FILENO, "ERROR", 5);
 	return(NULL);
