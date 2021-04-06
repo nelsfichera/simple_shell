@@ -25,7 +25,7 @@ int execute(char **commands);
 char **parse(char *input, char *separator);
 /*builtins*/
 char *pathmod(char *compath);
-int isPath(char *isthispath)
+int isPath(char *isthispath);
 char *_env(const char *name, char **env);
 int exitshell(char **command);
 
