@@ -18,14 +18,11 @@ int main(void)
 	    buffer = malloc(BUFFER_SIZE * sizeof(char));
 	    if (buffer == NULL)
 	    {
+			perror("buffer cannot be stored");
 		    return (-1);
 	    }
 	    printf("SimpleShell$ ");
 	    getline(&buffer, &bufsize, stdin);
-	    if (buffer)
-	    {
-		   exitshell();
-	 	}
 	    /* the parent process should return 1, which is True for the while loop */
 	    success = execute(parse(buffer, DELIM));
     } while (success);
