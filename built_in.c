@@ -22,3 +22,22 @@ int exitshell(char **command)
 	return(0);
 }
 commented out for testing*/
+
+int checkbuiltin(char **command)
+{
+	int x; 
+	char *array[] = {"exit", "cd", "env", NULL}; 
+
+	typedef int(*builtin)(char **);
+	builtin functions [] = {&exitshell, &cd, &printenv};
+
+	x = 0;
+
+	while (array[x])
+	{
+		if (_strcmp(array[x], command[0]) == 0)
+				return (functions[x](command));
+		x++;
+	}
+	return (execute(command));
+}
