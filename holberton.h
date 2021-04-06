@@ -12,6 +12,12 @@
 #define BUFFER_SIZE 1024
 #define DELIM "\n\a\t"
 extern char **environ;
+/*function pointers*/ 
+typedef struct builtin
+{
+	char *command; 
+	void (*function)(char **);
+} built_in; 
 /*str handlers*/
 int _putchar(char c);
 int _strlen(char *s);
