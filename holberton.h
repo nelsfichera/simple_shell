@@ -16,7 +16,7 @@ extern char **environ;
 typedef struct builtin
 {
 	char *command; 
-	void (*function)(char **);
+	void (*function)(char *);
 } built_in; 
 /*str handlers*/
 int _putchar(char c);
@@ -34,5 +34,7 @@ int pathmod(char *compath);
 int isPath(char *isthispath);
 char *_env(const char *name, char **env);
 int exitshell(char **command);
+char *checkbuiltin(char *command);
+
 
 #endif
