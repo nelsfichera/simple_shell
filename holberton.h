@@ -34,7 +34,7 @@ int pathmod(char *compath);
 int isPath(char *isthispath);
 char *_env(const char *name, char **env);
 int exitshell(char **command);
-char *checkbuiltin(char *command);
+int checkbuiltin(char *command);
 
 
 #endif
