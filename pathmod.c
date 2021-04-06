@@ -44,10 +44,11 @@ char *pathmod(char *compath)
     char *environment = "bash: ";
     char *path_not_exists = ": No such file or directory";
 
-    if (compath == "cd")
+    /* need a pointer function to check for cd, printenv, and other builtins*/
+    /* if (compath == cd)
     {
-        return (compath);
-    }
+       return (compath);
+    }*/
     /* determine if compath is a path or a command */
     comIsPath = isPath(compath); /* returns either 1 or 0. 1 is true. 0 is false */
 
