@@ -22,7 +22,7 @@ int main(void)
 	    }
 	    printf("SimpleShell$ ");
 	    getline(&buffer, &bufsize, stdin);
-	    if (getline = (_strcmp("exit", NULL)))
+	    if (buffer)
 	    {
 		   exitshell();
 	 	}
