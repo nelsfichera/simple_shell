@@ -12,8 +12,8 @@ int exitshell(char **command)
 	if (*command)
 	{
 		x = 0;
-		while(environ[x])/*defined in extern char*/
-/*		{
+		while(environ[x])
+		{
 			write(1, environ[x], _strlen(environ[x]));
 			write(1, "\n", 1);
 			x++;
@@ -21,9 +21,4 @@ int exitshell(char **command)
 	}
 	return(0);
 }
-int cd (char **command)
-{
-	chdir(command[1]);
-	return (0);
-}
-*/ /*commented out for testing*/
+commented out for testing*/
