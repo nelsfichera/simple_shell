@@ -35,7 +35,7 @@ int isPath(char *isthispath)
  * @compath: command path. All commands are a path until proven guilty.
  * Return: string that will eventually be passed into execve
  */
-char *pathmod(char *compath)
+int *pathmod(char *compath)
 {
     struct stat stats;
     char *bin = "/bin/";
@@ -63,7 +63,7 @@ char *pathmod(char *compath)
         strcat(environment, compath);
         strcat(environment, path_not_exists);
         perror(environment);
-        return ("bad");
+        return (0);
     }
     /* below only accounts /bin/. Needs to account for other universally exposed folders like cd/ for cd command */
     strcat(bin, compath);
@@ -75,5 +75,5 @@ char *pathmod(char *compath)
     /* build error for when path does not exist. Environment should be defined. Defined as "bash" for now*/
     strcat(compath, ": command not found");
     perror(compath);
-    return ("bad");
+    return (0);
 }

@@ -18,7 +18,7 @@ int execute(char **commands)
 	if (child_pid == 0)
 	{
 		pathstat = pathmod(commands[0]);
-		if (pathstat == "bad")
+		if (pathstat == 0)
 			exit(2);
 		if (execve(pathstat, commands, NULL) == -1)
 		{
