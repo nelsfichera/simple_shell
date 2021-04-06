@@ -1,5 +1,33 @@
 #include "holberton.h"
-/** pathmod - path module that checks where the command comes from
+
+/**
+ * isPath - determines if the command is a path
+ * @isthispath: input string
+ * Return: either 0 or 1
+ */
+int isPath(char *isthispath)
+{
+    int iter = 0;
+    int str_len = _strlen(isthispath);
+
+    while (isthispath[iter])
+    {
+        if (isthispath[iter] != '/')
+        {
+            if (iter + 1 < str_len)
+            {
+                if (isthispath[iter + 1] == '/')
+                {
+                    return (1);
+                }
+            }
+        }
+    }
+    return (0);
+}
+
+/**
+ * pathmod - path module that checks where the command comes from
  * @compath: command path. All commands are a path until proven guilty.
  * Return: string that will eventually be passed into execve
  */
@@ -18,7 +46,7 @@ char *pathmod(char *compath)
     }
     /* it would be best to determine if compath is a path or a command */
     /* ispath() function needs to be built */
-    comIsPath = ispath(compath); /* returns either 1 or 0. 1 is true. 0 is false */
+    comIsPath = isPath(compath); /* returns either 1 or 0. 1 is true. 0 is false */
 
     /* stat() dumps info to struct stat stats*/
     /* if the executable file exists in compath */
