@@ -6,8 +6,8 @@
  */
 
 int main(void)
-{
-    size_t bufsize = 1024; /* for now. Should increase or workaround later. The workaround is going to be a macros */
+{ 
+ 	size_t bufsize = BUFFER_SIZE;
     char *buffer;
     char *sep;
     int success = 1;
@@ -16,7 +16,7 @@ int main(void)
     {
 
 	    /* read */
-	    buffer = malloc(bufsize * sizeof(char));
+	    buffer = malloc(BUFFER_SIZE * sizeof(char));
 	    if (buffer == NULL)
 	    {
 		    return (-1);
@@ -29,7 +29,7 @@ int main(void)
 	    }
 	    sep = " ";
 	    /* the parent process should return 1, which is True for the while loop */
-	    success = execute(parse(buffer, sep), NULL);
+	    success = execute(parse(buffer, sep));
     } while (success);
 
     return (0);
