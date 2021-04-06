@@ -3,13 +3,17 @@
 /**
  * isPath - determines if the command is a path
  * @isthispath: input string
- * Return: either 0 or 1
+ * Return: either 0 or 1. 1 for true. 0 for false.
  */
 int isPath(char *isthispath)
 {
     int iter = 0;
     int str_len = _strlen(isthispath);
 
+    if (str_len == 1 && isthispath[0] == '/')
+    {
+        return (1);
+    }
     while (isthispath[iter])
     {
         if (isthispath[iter] != '/')
@@ -44,8 +48,7 @@ char *pathmod(char *compath)
     {
         return (compath);
     }
-    /* it would be best to determine if compath is a path or a command */
-    /* ispath() function needs to be built */
+    /* determine if compath is a path or a command */
     comIsPath = isPath(compath); /* returns either 1 or 0. 1 is true. 0 is false */
 
     /* stat() dumps info to struct stat stats*/
