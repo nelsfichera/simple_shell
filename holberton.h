@@ -35,6 +35,7 @@ int isPath(char *isthispath);
 char *_env(const char *name, char **env);
 int exitshell(char **command);
 int checkbuiltin(char *command);
+int _cd();
 
 
 #endif
