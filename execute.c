@@ -32,13 +32,13 @@ int execute(char **commands)
 			perror("Path does not exist");
 			return (1);
 		}
+		/* use checkbuiltin see if it's builtin */
 		/* if pathorcom is not a normal path, then it must be a command */
-		if (execve(checkbuiltin(commands), commands, NULL) == -1)
-		{ /* if execve fails */
+		/*if (execve(checkbuiltin(commands[0]), commands, NULL) == -1)
+		{ if execve fails
 			perror("Error, command failed for some reason");
 			return (1);
-		}
-
+		}*/
 	}
 	if (child_pid < 0)
 	{
