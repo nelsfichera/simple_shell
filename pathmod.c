@@ -35,7 +35,7 @@ int isPath(char *isthispath)
  * @compath: command path. All commands are a path until proven guilty.
  * Return: string that will eventually be passed into execve
  */
-int *pathmod(char *compath)
+int pathmod(char *compath)
 {
     struct stat stats;
     char *bin = "/bin/";
