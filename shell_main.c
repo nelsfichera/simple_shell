@@ -9,7 +9,6 @@ int main(void)
 { 
  	size_t bufsize = BUFFER_SIZE;
     char *buffer;
-    char *sep;
     int success = 1;
 
     do
@@ -27,9 +26,8 @@ int main(void)
 	    {
 		   exitshell();
 	    }
-	    sep = " ";
 	    /* the parent process should return 1, which is True for the while loop */
-	    success = execute(parse(buffer, sep));
+	    success = execute(parse(buffer, DELIM));
     } while (success);
 
     return (0);
