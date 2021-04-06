@@ -3,12 +3,12 @@
 
 int execute(char **commands)
 {
-	pid_t parent_pid;
+	/*pid_t parent_pid;*/
     pid_t child_pid;
-	char *pathstat;
+	int pathstat;
 
     /* Evaluate */
-    parent_pid = getpid();
+    /*parent_pid = getpid();*/
     child_pid = fork();
 
 	if (commands == NULL || commands[0] == NULL)
@@ -18,9 +18,7 @@ int execute(char **commands)
 	if (child_pid == 0)
 	{
 		pathstat = pathmod(commands[0]);
-		if (pathstat == 0)
-			exit(2);
-		if (execve(pathstat, commands, NULL) == -1)
+		if (execve(commands[0], commands, NULL) == -1)
 		{
 			perror("Error");
 			exit(2);
