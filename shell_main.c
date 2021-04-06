@@ -22,10 +22,10 @@ int main(void)
 	    }
 	    printf("SimpleShell$ ");
 	    getline(&buffer, &bufsize, stdin);
-	    if (getline == "exit")
+	    if (getline = (_strcmp("exit", NULL)))
 	    {
 		   exitshell();
-	    }
+	 	}
 	    /* the parent process should return 1, which is True for the while loop */
 	    success = execute(parse(buffer, DELIM));
     } while (success);
