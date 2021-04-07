@@ -32,10 +32,10 @@ char **parse(char *input);
 /*builtins*/
 int pathmod(char *compath);
 int isPath(char *path);
-char *_env(const char *name, char **env);
-int exitshell(char **command);
 int checkbuiltin(char **command);
-int _cd();
-
+int isPath(char *isthispath);
+int *_printenv(char **env);
+int exitshell(char **command);
+char *_getenv(char *name, char **env);
 
 #endif

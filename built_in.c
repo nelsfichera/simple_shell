@@ -6,7 +6,7 @@ int exitshell(char **command)
 	exit(1);
 	return (EXIT_SUCCESS);
 }
-/*int printenv(char **command)
+int printenv(char **command)
 {
 	int x;
 	if (*command)
@@ -21,7 +21,6 @@ int exitshell(char **command)
 	}
 	return(0);
 }
-commented out for testing*/
 
 int checkbuiltin(char **command)
 {
