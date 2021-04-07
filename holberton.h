@@ -10,12 +10,12 @@
 #include <stddef.h>
 /*macros and extern*/
 #define BUFFER_SIZE 1024
-#define DELIM "\n\a\t"
+#define DELIM " \n\a\t"
 extern char **environ;
 /*function pointers*/ 
 typedef struct builtin
 {
-	char *command; 
+	char **command; 
 	void (*function)(char *);
 } built_in; 
 /*str handlers*/
@@ -28,13 +28,13 @@ int _strlen(char *s);
 char *_strtok(char *str, char *separator, int flag);
 /*main functions*/
 int execute(char **commands);
-char **parse(char *input, char *separator);
+char **parse(char *input);
 /*builtins*/
 int pathmod(char *compath);
-int isPath(char *isthispath);
+int isPath(char *path);
 char *_env(const char *name, char **env);
 int exitshell(char **command);
-int checkbuiltin(char *command);
+int checkbuiltin(char **command);
 int _cd();
 
 
