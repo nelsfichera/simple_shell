@@ -6,21 +6,6 @@ int exitshell(char **command)
 	exit(1);
 	return (EXIT_SUCCESS);
 }
-int printenv(char **command)
-{
-	int x;
-	if (*command)
-	{
-		x = 0;
-		while(environ[x])
-		{
-			write(1, environ[x], _strlen(environ[x]));
-			write(1, "\n", 1);
-			x++;
-		}
-	}
-	return(0);
-}
 
 int checkbuiltin(char *command)
 {
