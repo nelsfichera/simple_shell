@@ -7,7 +7,7 @@ int exitshell(char **command)
 	return (EXIT_SUCCESS);
 }
 
-int checkbuiltin(char *command)
+int checkbuiltin(char **command)
 {
 	int x; 
 	char *array[] = {"exit", "cd", "env", NULL}; 
