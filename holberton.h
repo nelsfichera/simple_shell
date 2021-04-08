@@ -38,5 +38,10 @@ int _printenv(char **env);
 int _atoi(char *str);
 int _builtinexit(char **arguments);
 char *_getenv(char *name, char **env);
+<<<<<<< HEAD
 int _cd(char **commands);
+=======
+int isBinCommand(char **command);
+
+>>>>>>> 8e1ec0e1ab24bf3fc6a66ada1b541d9048f2de38
 #endif
