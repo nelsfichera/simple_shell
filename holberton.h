@@ -35,7 +35,8 @@ int isPath(char *path);
 int checkbuiltin(char **command);
 int isPath(char *isthispath);
 int *_printenv(char **env);
-int exitshell(char **command);
+int _atoi(char *str);
+int _builtinexit(char **arguments);
 char *_getenv(char *name, char **env);
 
 #endif
