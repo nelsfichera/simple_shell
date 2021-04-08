@@ -28,7 +28,7 @@ int _strlen(char *s);
 char *_strtok(char *str, char *separator, int flag);
 /*main functions*/
 int execute(char **commands);
-char **parse(char *input);
+int parse(char *input);
 /*builtins*/
 int pathmod(char *compath);
 int isPath(char *path);

@@ -24,7 +24,7 @@ int main(void)
 	    printf("SimpleShell$ ");
 	    getline(&buffer, &bufsize, stdin);
 	    /* the parent process should return 1, which is True for the while loop */
-	    success = execute(parse(buffer, DELIM));
+	    success = parse(buffer);
     } while (success);
 
     return (0);

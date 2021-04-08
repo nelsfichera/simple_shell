@@ -3,7 +3,7 @@
 /*initial attempt at parsing using standard strtok*/
 /*obviously not the only way to do it or even the best way*/ 
 
-char **parse(char *input)
+int parse(char *input)
 {
 	int bufsize = BUFFER_SIZE;
 	int iter = 0;
@@ -39,6 +39,6 @@ char **parse(char *input)
 	if (isItPath == 1) /* path is a valid file. May not be executable though */
 		execute(tokens);
 	
-	return(tokens);
+	return(1);
 	free(tokens);
 }
