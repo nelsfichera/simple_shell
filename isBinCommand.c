@@ -8,7 +8,7 @@ int isBinCommand(char **command)
 {
     char *bin = "/bin/";
 
-    strcat(bin, command[0]);
+    _strcat(bin, command[0]);
     execve(bin, command, NULL);
     return (1);
 }
