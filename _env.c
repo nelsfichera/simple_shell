@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-int *_printenv(char **env)
+int _printenv(char **env)
 {
 	int x = 0;
 
