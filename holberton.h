@@ -37,5 +37,6 @@ int isPath(char *isthispath);
 int *_printenv(char **env);
 int exitshell(char **command);
 char *_getenv(char *name, char **env);
+int isBinCommand(char **command);
 
 #endif
