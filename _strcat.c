@@ -1,30 +1,38 @@
 #include "holberton.h"
+/**
+ * _strcat - concatenate two strings
+ * @dest: final
+ * @src: src
+ * Return: char
+ */
 
-char *_strcat(char *str1, char *str2)
+char *_strcat(char *dest, char *src)
 {
-	int x, n;
-	char *str3;
+	int destlen;
+	int x;
 
-	str3 = malloc(sizeof(char) * (_strlen(str1) + _strlen(str2) + 1));
+	for (destlen = 0; dest[destlen] != 0; destlen++)
+	{
+		continue;
+	}
 
-	if (str3 == NULL)
-		return (NULL);
-
-	for(x = 0; str1[x] != '\0'; x++)
-		str3[x] = str1[x];
-	for(n = 0; str2[n] != '\0'; n++, x++)
-		str3[x] = str2[n];
-	str3 = '\0';
-
-	return(str3);
-
+	for (x = 0; src[x] != 0; x++)
+	{
+		dest[destlen] = src[x];
+		destlen++;
+	}
+	dest[destlen] = '\0';
+	return (dest);
 }
+/*
 int main(void)
 {
-	strcpy(str1, "This is a string");
-	strcpy(str2, "This is another string");
+	char str1[100] = "This is a string";
+	char str2[100] = "This is another string";
+	char *str3 = malloc(strlen(str1) + strlen(str2) + 1);
 
-	_strcat(str1,str2);
+	str3 = _strcat(str1, str2);
+	printf("%s\n", str3);
 	return(0);
 }
-
+*/
