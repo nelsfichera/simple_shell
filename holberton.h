@@ -34,10 +34,10 @@ int pathmod(char *compath);
 int isPath(char *path);
 int checkbuiltin(char **command);
 int isPath(char *isthispath);
-int *_printenv(char **env);
+int _printenv(char **env);
 int _atoi(char *str);
 int _builtinexit(char **arguments);
 char *_getenv(char *name, char **env);
+int _cd(char **commands);
 int isBinCommand(char **command);
-
 #endif

@@ -11,7 +11,7 @@ char *_strtok(char *str, char *separator, int flag)
 
 	if (!str)
 		return (NULL);
-	for (i = constant; str[x]; x++)
+	for (x = constant; str[x]; x++)
 	{
 		for(n = 0; separator[n]; n++)
 		{
@@ -23,7 +23,7 @@ char *_strtok(char *str, char *separator, int flag)
 		length++;
 	}
 
-	if (len != 0)
+	if (length != 0)
 	{
 		token = malloc(sizeof(char) * (length + 1));
 		for (n = 0; n < (length + 1); n++)
