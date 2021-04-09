@@ -15,9 +15,7 @@ int isPath(char *path)
         return (1);
     /* checks if a path is a folder that exists */
     /* we don't really need this right now so I'll comment it out */
-    /*
-     * if (S_ISDIR(stats.st_mode))
-     *      return (2);
-     */
+    if (S_ISDIR(stats.st_mode))
+          return (2);
     return (0);
 }

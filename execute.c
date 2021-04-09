@@ -3,7 +3,6 @@
 
 int execute(char **commands)
 {
-	struct stat stats;
 	pid_t child_pid;
 
 	/* Evaluate */

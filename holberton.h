@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
 #include <stddef.h>
 /*macros and extern*/
 #define BUFFER_SIZE 1024
