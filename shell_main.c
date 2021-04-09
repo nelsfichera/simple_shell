@@ -10,12 +10,10 @@ int main(void)
  	size_t bufsize = BUFFER_SIZE;
     char *buffer;
     int success = 1;
-	int bytes_read;
 
-	printf("made it to shell main.c\n");
     do
     {
-
+		printf("($) ");
 	    /* read */
 	    buffer = malloc(BUFFER_SIZE * sizeof(char));
 	    if (buffer == NULL)
@@ -23,12 +21,7 @@ int main(void)
 			perror("buffer cannot be stored");
 		    return (-1);
 	    }
-	    printf("SimpleShell$ ");
-	    bytes_read = getline(&buffer, &bufsize, stdin);
-		printf("the bytes_read is %d\n", bytes_read);
-		printf("made it through getline\n");
-		printf("buffer is %s\n", buffer);
-		printf("buffer can be printed twice, %s\n", buffer);
+	    getline(&buffer, &bufsize, stdin);
 	    /* the parent process should return 1, which is True for the while loop */
 	    success = parse(buffer);
     } while (success);

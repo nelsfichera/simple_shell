@@ -6,10 +6,17 @@
  */
 int isBinCommand(char **command)
 {
-    char *bin = "/bin/";
+    char bin[1024] = "/bin/";
+    char **new_command = malloc(sizeof(bin) + sizeof(command));
+    int iter = 1;
 
-    printf("made it to isBinCommand");
     strcat(bin, command[0]);
-    execve(bin, command, NULL);
+    new_command[0] = bin;
+    while (command[iter])
+    {
+        _strcpy(new_command[iter], command[iter]);
+        iter++;
+    }
+    execute(new_command);
     return (1);
 }
