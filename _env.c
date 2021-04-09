@@ -2,12 +2,14 @@
 
 int _printenv(char **env)
 {
-	int x = 0;
+	unsigned int index = 0;
+	int env_var_len = 0; 
 
-	for(x = 0; env[x] != NULL; x++)
+	for (index = 0; env[index] != NULL; index++)
 	{
-		write(STDOUT_FILENO, env[x], _strlen(env[x]));
-		write(STDOUT_FILENO, "\n",1);
+		env_var_len = _strlen(env[index]);
+		write(1, env[index], env_var_len);
+		write(1, "\n", 1);
 	}
 	return (EXIT_SUCCESS);
 }
