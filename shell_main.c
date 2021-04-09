@@ -11,6 +11,7 @@ int main(void)
     char *buffer;
     int success = 1;
 
+	printf("made it to shell main.c\n");
     do
     {
 
@@ -23,6 +24,7 @@ int main(void)
 	    }
 	    printf("SimpleShell$ ");
 	    getline(&buffer, &bufsize, stdin);
+		printf("made it through getline\n");
 	    /* the parent process should return 1, which is True for the while loop */
 	    success = parse(buffer);
     } while (success);

@@ -8,9 +8,10 @@ int parse(char *input)
 	int bufsize = BUFFER_SIZE;
 	int iter = 0;
 	int isItPath;
-	char **tokens = malloc(bufsize * sizeof(char *));
+	char **tokens = malloc(bufsize * sizeof(char));
 	char *token;
 
+	printf("made it to parse.c");
 	if (tokens == NULL)
 	{
 		perror("malloc failed for tokens");
@@ -31,8 +32,10 @@ int parse(char *input)
 		token = strtok(NULL, DELIM);
 	}
 	tokens[iter] = NULL;
+	printf("made it to checkbuiltin");
 	if (checkbuiltin(tokens) == 1)
 		return (1);
+	printf("made it to isbincommand in parse.c");
 	if (isBinCommand(tokens) == 1)
 		return (1);
 	isItPath = isPath(tokens[0]);
