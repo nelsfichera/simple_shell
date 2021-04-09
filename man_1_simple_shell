@@ -1,0 +1,36 @@
+. This is the man page of Thomas and Nels' hsh
+.TH : HSH "1" "April 14, 2021" "hsh man page"
+.SH NAME
+.B hsh
+- a simplified, limited-capability command line interpreter. 
+.SH SYNOPSIS
+.B ./hsh
+[command] [options] [FILE]
+.SH DESCRIPTION
+hsh mimics aspects of standard shells like bash or zsh. It will interpret commands and writes output to 
+.I stdout
+, the standard output, and then awaits another prompt from the user. 
+.SH BUILT IN COMMANDS
+.sp
+	exit
+.sp
+	env
+
+.sp
+	cd
+.sp
+are all handled automatically by 
+.B hsh
+.SH NOTES
+hsh does not currently support the history function, comments, aliases, && and || operators, or $? and $$ variables. It does not support the ; separator. 
+.SH EXAMPLE
+.IP 
+./hsh
+/bin/ls
+.SH SEE ALSO
+.I sh(1)
+.I bash(1)
+.SH BUGS
+If you find a bug, please report to github users nelsfichera or tieje. 
+.SH AUTHORS
+Thomas Francis and Nels Fichera
