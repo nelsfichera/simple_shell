@@ -11,7 +11,7 @@ char *_strcat(char *str1, char *str2)
 		return (NULL);
 
 	for(x = 0; str1[x] != '\0'; x++)
-		new[x] = str1[x];
+		str3[x] = str1[x];
 	for(n = 0; str2[n] != '\0'; n++, x++)
 		str3[x] = str2[n];
 	str3 = '\0';
