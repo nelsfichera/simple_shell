@@ -10,6 +10,7 @@ int main(void)
  	size_t bufsize = BUFFER_SIZE;
     char *buffer;
     int success = 1;
+	int bytes_read;
 
 	printf("made it to shell main.c\n");
     do
@@ -23,8 +24,11 @@ int main(void)
 		    return (-1);
 	    }
 	    printf("SimpleShell$ ");
-	    getline(&buffer, &bufsize, stdin);
+	    bytes_read = getline(&buffer, &bufsize, stdin);
+		printf("the bytes_read is %d\n", bytes_read);
 		printf("made it through getline\n");
+		printf("buffer is %s\n", buffer);
+		printf("buffer can be printed twice, %s\n", buffer);
 	    /* the parent process should return 1, which is True for the while loop */
 	    success = parse(buffer);
     } while (success);

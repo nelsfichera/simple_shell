@@ -9,7 +9,7 @@ int isBinCommand(char **command)
     char *bin = "/bin/";
 
     printf("made it to isBinCommand");
-    _strcat(bin, command[0]);
+    strcat(bin, command[0]);
     execve(bin, command, NULL);
     return (1);
 }

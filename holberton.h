@@ -10,7 +10,7 @@
 #include <sys/wait.h>
 #include <stddef.h>
 /*macros and extern*/
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 128
 #define DELIM " \n\a\t"
 extern char **environ;
 /*function pointers*/ 
@@ -29,7 +29,7 @@ int _strlen(char *s);
 char *_strtok(char *str, char *separator, int flag);
 /*main functions*/
 int execute(char **commands);
-int parse(char *input);
+int parse(char *inputstring);
 /*builtins*/
 int pathmod(char *compath);
 int isPath(char *path);
