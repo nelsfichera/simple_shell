@@ -7,7 +7,6 @@ int parse(char *inputstring)
 {
 	int bufsize;
 	int iter = 0;
-	int isItPath;
 	char **tokens;
 	char *token;
 
@@ -37,10 +36,9 @@ int parse(char *inputstring)
 		return (1);
 	if (isBinCommand(tokens) == 1)
 		return (1);
-	isItPath = isPath(tokens[0]);
-	if (isItPath == 1) /* path is a valid file. May not be executable though */
+	if (isPath(tokens[0]) == 1) /* path is a valid file. May not be executable though */
 		execute(tokens);
-	
+	perror("command not found");
 	return(1);
 	free(tokens);
 }

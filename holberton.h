@@ -41,4 +41,5 @@ int _builtinexit(char **arguments);
 char *_getenv(char *name, char **env);
 int _cd(char **commands);
 int isBinCommand(char **command);
+int binExecute(char **commands);
 #endif
