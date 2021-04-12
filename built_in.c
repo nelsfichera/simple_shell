@@ -7,7 +7,7 @@ int checkbuiltin(char **command)
 	char *array[] = {"exit", "cd", "env", NULL}; 
 
 	typedef int(*builtin)(char **);
-	builtin functions [] = {&_builtinexit, &_cd, &_printenv};
+	builtin functions [] = {&_builtinexit, &_cd, &_env};
 
 	x = 0;
 

@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+int _env(char **env)
+{
+	if (env)
+		_printenv(environ);
+	return (1);
+}
 int _printenv(char **env)
 {
 	unsigned int index = 0;

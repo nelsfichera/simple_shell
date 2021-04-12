@@ -30,16 +30,16 @@ char *_strtok(char *str, char *separator, int flag);
 /*main functions*/
 int execute(char **commands);
 int parse(char *inputstring);
+int checkbuiltin(char **command);
+int isPath(char *path);
+int isBinCommand(char **command);
 /*builtins*/
 int pathmod(char *compath);
-int isPath(char *path);
-int checkbuiltin(char **command);
-int isPath(char *isthispath);
 int _printenv(char **env);
 int _atoi(char *str);
 int _builtinexit(char **arguments);
 char *_getenv(char *name, char **env);
 int _cd(char **commands);
-int isBinCommand(char **command);
 int binExecute(char **commands);
+int _env(char **env);
 #endif
