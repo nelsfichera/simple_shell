@@ -1,5 +1,5 @@
 . This is the man page of Thomas and Nels' hsh
-.TH : HSH "1" "April 14, 2021" "hsh man page"
+.TH hsh "1" "April 14, 2021" "hsh man page"
 .SH NAME
 .B hsh
 - a simplified, limited-capability command line interpreter. 
