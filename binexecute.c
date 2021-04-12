@@ -11,7 +11,6 @@ int binExecute(char **commands)
 
 	if (commands == NULL || commands[0] == NULL)
 	{
-		perror("binExecute Error: could not execute");
 		return (0);
 	}
 	if (child_pid == 0)
@@ -19,13 +18,11 @@ int binExecute(char **commands)
     _strcat(bin, commands[0]);
 		if (execve(bin, commands, NULL) == -1)
 		{ /* if execve fails */
-			perror("binExecute Error, execve path failed for some reason");
 			return (0);
 		}
 	}
 	if (child_pid < 0)
 	{
-		perror("binExecute Error: child was not created correctly");
 		return (0);
 	}
 

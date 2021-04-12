@@ -14,13 +14,11 @@ int parse(char *inputstring)
 	tokens = malloc(bufsize * sizeof(char*));
 	if (tokens == NULL)
 	{
-		perror("malloc failed for tokens\n");
 		free(tokens);
 		return (1);
 	}
 	if (inputstring == NULL)
 	{
-		perror("parse error, inputstring is null\n");
 		return (1);
 	}
 	/* replace with _strtok later when code start working */
@@ -38,7 +36,6 @@ int parse(char *inputstring)
 		return (1);
 	if (isPath(tokens[0]) == 1) /* path is a valid file. May not be executable though */
 		execute(tokens);
-	perror("command not found");
 	return(1);
 	free(tokens);
 }

@@ -8,7 +8,6 @@ int isBinCommand(char **command)
 {
     if (binExecute(command) == 0)
     {
-        perror("isBinCommand, execution error");
         return (0);
     }
     return (1);
