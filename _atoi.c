@@ -8,9 +8,9 @@ int _atoi(char *str)
 {
 	int x = 0, negative = -1, integer = 0, flag = 0;
 
-	while(str[x] != '\0')
+	while (str[x] != '\0')
 	{
-		if(str[x] == '-')
+		if (str[x] == '-')
 			negative = negative * -1;
 		if (str[x] >= '0' && str[x] <= '9')
 		{

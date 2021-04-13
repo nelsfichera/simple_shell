@@ -14,7 +14,7 @@ int _builtinexit(char **arguments)
 		free(arguments);
 		exit(EXIT_SUCCESS);
 	}
-	for(x = 0; arguments[1][x]; x++)
+	for (x = 0; arguments[1][x]; x++)
 	{
 		if ((arguments[1][x] >= '0' && arguments[1][x] <= '9')
 		|| arguments[1][0] == '+')
