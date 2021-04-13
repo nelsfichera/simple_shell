@@ -7,7 +7,7 @@
 int binExecute(char **commands)
 {
 	pid_t child_pid;
-    char bin[100] = "/bin/";
+	char bin[100] = "/bin/";
 
 	/* Evaluate */
 	child_pid = fork();
@@ -17,8 +17,8 @@ int binExecute(char **commands)
 		return (0);
 	}
 	if (child_pid == 0)
-	{ /* if child was successfully created */
-    _strcat(bin, commands[0]);
+	{/* if child was successfully created */
+		_strcat(bin, commands[0]);
 		if (execve(bin, commands, NULL) == -1)
 		{ /* if execve fails */
 			return (0);

@@ -13,7 +13,7 @@
 #define BUFFER_SIZE 128
 #define DELIM " \n\a\t"
 extern char **environ;
-/*function pointers*/ 
+/*function pointers*/
 /*printf */
 /**
 * struct functions - struct for calling functions
@@ -29,12 +29,14 @@ typedef struct functions
 /*function pointers*/
 /**
 * struct builtin - structure for pointers to built in functions
+* @command: commands
+* @function: function
 */
 typedef struct builtin
 {
-	char **command; 
+	char **command;
 	void (*function)(char *);
-} built_in; 
+} built_in;
 /*str handlers*/
 int _putchar(char c);
 int _strlen(char *s);

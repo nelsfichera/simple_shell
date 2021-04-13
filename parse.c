@@ -12,7 +12,7 @@ int parse(char *inputstring)
 	char *token;
 
 	bufsize = BUFFER_SIZE;
-	tokens = malloc(bufsize * sizeof(char*));
+	tokens = malloc(bufsize * sizeof(char *));
 	if (tokens == NULL)
 	{
 		free(tokens);
@@ -22,7 +22,6 @@ int parse(char *inputstring)
 	{
 		return (1);
 	}
-	/* replace with _strtok later when code start working */
 	token = strtok(inputstring, DELIM);
 	while (token != NULL)
 	{
@@ -35,8 +34,8 @@ int parse(char *inputstring)
 		return (1);
 	if (isBinCommand(tokens) == 1)
 		return (1);
-	if (isPath(tokens[0]) == 1) /* path is a valid file. May not be executable though */
+	if (isPath(tokens[0]) == 1)
 		execute(tokens);
-	return(1);
+	return (1);
 	free(tokens);
 }
