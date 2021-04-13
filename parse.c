@@ -1,8 +1,9 @@
 #include "holberton.h"
-
-/*initial attempt at parsing using standard strtok*/
-/*obviously not the only way to do it or even the best way*/ 
-
+/**
+* parse - parses the gotten line for commands
+* @inputstring: the string from stdin
+* Return: 1 on success
+*/
 int parse(char *inputstring)
 {
 	int bufsize;

@@ -1,5 +1,9 @@
 #include "holberton.h"
-
+/**
+* _cd - changes the directory
+* @commands: the directory to be changed to
+* Return: 1 on success
+*/
 int _cd(char **commands)
 {
 	char cwd[BUFFER_SIZE];

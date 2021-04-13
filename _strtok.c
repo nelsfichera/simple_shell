@@ -1,5 +1,11 @@
 #include "holberton.h"
-
+/**
+* _strtok - mimics standard library strtok and tokenizes a string
+* @str: the string
+* @separator: separators to be concatenated
+* @flag: any flags
+* Return: tokens on success, NULL on failure
+*/
 char *_strtok(char *str, char *separator, int flag)
 {
 	char *token = NULL;

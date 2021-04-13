@@ -2,7 +2,7 @@
 
 /**
  * main - where everything begins. It's better to have many small files dedicated to for each function than a few large files.
- * Return: 0
+* Return: 0
  */
 
 int main(void)

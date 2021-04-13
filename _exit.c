@@ -1,5 +1,9 @@
 #include "holberton.h"
-
+/**
+* _builtinexit - mimics the standard exit command and exits the shell
+* @arguments: any flags or arguments passed to exit
+* Return: -1 on success.
+*/
 int _builtinexit(char **arguments)
 {
 	int flag, x, integer = 0;

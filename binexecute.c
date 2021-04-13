@@ -1,6 +1,9 @@
 #include "holberton.h"
-/*initial attempt at an execute function, to be coordinated with main*/
-
+/**
+* binExecute - executes bin commands
+* @commands: arguments
+* Return: 1 on success, 0 on failure
+*/
 int binExecute(char **commands)
 {
 	pid_t child_pid;
