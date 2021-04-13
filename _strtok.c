@@ -19,7 +19,7 @@ char *_strtok(char *str, char *separator, int flag)
 		return (NULL);
 	for (x = constant; str[x]; x++)
 	{
-		for(n = 0; separator[n]; n++)
+		for (n = 0; separator[n]; n++)
 		{
 			if (str[x] == separator[n])
 				c = 1;
