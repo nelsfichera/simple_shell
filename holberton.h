@@ -41,7 +41,11 @@ int _strlen(char *s);
 char *_strcat(char *str1, char *str2);
 int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
+char *_strdup(char *str);
 char *_strtok(char *str, char *separator, int flag);
+/*memory*/
+char *_memset(char *addy, char value, unsigned int size);
+void *_calloc(unsigned int members, int size);
 /*main functions*/
 int execute(char **commands);
 int parse(char *inputstring);
