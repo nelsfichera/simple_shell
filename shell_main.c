@@ -13,7 +13,7 @@ int main(void)
 
     do
     {
-		printf("($) ");
+		_printf("($) ");
 	    /* read */
 	    buffer = malloc(BUFFER_SIZE * sizeof(char));
 	    if (buffer == NULL)
