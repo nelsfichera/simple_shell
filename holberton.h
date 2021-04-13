@@ -13,7 +13,6 @@
 #define BUFFER_SIZE 128
 #define DELIM " \n\a\t"
 extern char **environ;
-<<<<<<< HEAD
 /*function pointers*/ 
 /*printf */
 /**
@@ -27,12 +26,10 @@ typedef struct functions
 	 char *(*function)(va_list);
 
 } func_t;
-=======
 /*function pointers*/
 /**
 * struct builtin - structure for pointers to built in functions
 */
->>>>>>> e9d3cfd0462d103a29bd047182a411c4ba54a2f9
 typedef struct builtin
 {
 	char **command; 
