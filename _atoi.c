@@ -1,5 +1,9 @@
 #include "holberton.h"
-
+/**
+* _atoi - mimics standard atoi, creates an int from a char
+* @str: the string to convert
+* Return: integer
+*/
 int _atoi(char *str)
 {
 	int x = 0, negative = -1, integer = 0, flag = 0;

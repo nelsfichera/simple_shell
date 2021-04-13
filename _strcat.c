@@ -24,15 +24,3 @@ char *_strcat(char *dest, char *src)
 	dest[destlen] = '\0';
 	return (dest);
 }
-/*
-int main(void)
-{
-	char str1[100] = "This is a string";
-	char str2[100] = "This is another string";
-	char *str3 = malloc(strlen(str1) + strlen(str2) + 1);
-
-	str3 = _strcat(str1, str2);
-	printf("%s\n", str3);
-	return(0);
-}
-*/

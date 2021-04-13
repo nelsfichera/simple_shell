@@ -1,6 +1,9 @@
 #include "holberton.h"
-/*initial attempt at an execute function, to be coordinated with main*/
-
+/**
+* execute - executes a command as a child process
+* @commands: the command being passed to the shell
+* Return: 0 on failure, 1 on success
+*/
 int execute(char **commands)
 {
 	pid_t child_pid;

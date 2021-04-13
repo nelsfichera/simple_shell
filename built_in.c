@@ -1,6 +1,9 @@
 #include "holberton.h"
-/*initial attempt at exit, needs to be added to as we have a better understanding of scope*/
-
+/**
+* checkbuiltin - checks if a command is a built in function or not
+* @command: the command being passed to the shell
+* Return: pointer to function on success, 0 on failure
+*/
 int checkbuiltin(char **command)
 {
 	int x; 
