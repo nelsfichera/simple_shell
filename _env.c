@@ -47,7 +47,7 @@ char *_getenv(char *name, char **env)
 		current_env = NULL;
 		token2 = NULL;
 		current_env = strdup(env[x]);
-		token1 = _strtok(current_env, "=");
+		token1 = strtok(current_env, "=");
 		token2 = strdup(strtok(NULL, "="));
 		if (_strcmp(env_name, token1) == 0)
 			break;

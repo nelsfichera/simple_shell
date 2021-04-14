@@ -1,26 +1,44 @@
 #include "holberton.h"
 /**
  * main - where everything begins.
+ * @argc: number of arguments
+ * @argv: arguments in string
  * Return: 0
  */
-int main(void)
+int main(int argc, char **argv)
 {
 	size_t bufsize = BUFFER_SIZE;
 	char *buffer;
+	char *NonActiveArray = malloc(argc * 100);
 	int success = 1;
+	int iter = 1;
 
-	do {
-		_printf("($) ");
-		/* read */
-		buffer = malloc(BUFFER_SIZE * sizeof(char));
-		if (buffer == NULL)
+	if (argc > 1)
+	{
+		while (argv[iter])
 		{
-			perror("buffer cannot be stored");
-			return (-1);
+			strcat(NonActiveArray, argv[iter]);
+			strcat(NonActiveArray, " ");
+			iter++;
 		}
-		getline(&buffer, &bufsize, stdin);
-		/* the parent process should return 1, which is True for the while loop */
-		success = parse(buffer);
-	} while (success);
+		parse(NonActiveArray);
+	}
+	else
+	{
+		do
+		{
+			_printf("($) ");
+			/* read */
+			buffer = malloc(BUFFER_SIZE * sizeof(char));
+			if (buffer == NULL)
+			{
+				perror("buffer cannot be stored");
+				return (-1);
+			}
+			getline(&buffer, &bufsize, stdin);
+			/* the parent process should return 1, which is True for the while loop */
+			success = parse(buffer);
+		} while (success);
+	}
 	return (0);
 }

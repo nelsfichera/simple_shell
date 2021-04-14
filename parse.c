@@ -1,5 +1,20 @@
 #include "holberton.h"
 /**
+* NonActiveParse - parses the gotten line for commands
+* @array: array of strings from nonactive mode
+* Return: 1 on success
+*/
+int NonActiveParse(char **array)
+{
+	if (checkbuiltin(array) == 1)
+		return (1);
+	if (isBinCommand(array) == 1)
+		return (1);
+	if (isPath(array[0]) == 1)
+		execute(array);
+	return (1);
+}
+/**
 * parse - parses the gotten line for commands
 * @inputstring: the string from stdin
 * Return: 1 on success
