@@ -8,19 +8,23 @@ char **splitline(char *input)
 {
 	char *token, **tokens;
 	int index = 0;
+<<<<<<< HEAD
+	const char delimtoken[] = (" \n\r\t\a");
+=======
 	char delim[] = " \n\r\t\a";
+>>>>>>> 5a51c2011fc550063c42b3497e20ac9bce652fb3
 
-	tokens = _calloc (98, sizeof(char *));
+	tokens = _calloc(98, sizeof(char *));
 
 	if (!tokens)
 		return (NULL);
 
-	token = strtok(input, delim);
+	token = _strtok(input, delimtoken);
 	
 	while (token)
 	{
 		tokens[index] = token;
-		token = strtok(NULL, delim);
+		token = _strtok(NULL, delimtoken);
 		index++;
 	}
 	tokens[index] = NULL;
@@ -28,4 +32,42 @@ char **splitline(char *input)
 
 }
 
-/*this may be where the new strtok goes if I have time*/
+char *_modstrtok(char *str, const char *delim, char **save)
+{
+	char *end;
+	
+	if (str == NULL)
+		str = *save;
+	if (*str == '\0')
+	{
+		*save = str;
+		return (NULL);
+	}
+	
+	str += _strspn(str, delim);
+
+	if (*str == '\0')
+	{
+		*save = str;
+		return (NULL);
+	}
+	
+	end = str + _strcspn(str, delim);
+
+	if (*end == '\0')
+	{
+		*save = end;
+		return (str);
+	}
+	
+	*end = '\0';
+	*save = end + 1;
+	return (str);
+}
+
+char *_strtok(char *str, const char *delimeters)
+{
+	static char *originalstr;
+
+	return (_modstrtok(str, delimeters, &originalstr));
+}
