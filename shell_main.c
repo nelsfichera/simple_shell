@@ -17,8 +17,8 @@ int main(int argc, char **argv)
 	{
 		while (argv[iter])
 		{
-			strcat(NonActiveArray, argv[iter]);
-			strcat(NonActiveArray, " ");
+			_strcat(NonActiveArray, argv[iter]);
+			_strcat(NonActiveArray, " ");
 			iter++;
 		}
 		parse(NonActiveArray);
