@@ -1,9 +1,10 @@
+#include "holberton.h"
 /**
 * _getenv - gets the environment variables from path
 * @var: the name of the variable
 * Return: variable on success, null on failure
 */
-char *_getenv(const char *var)
+char *_getenv(char *var)
 {
 	int var_len = _strlen(var);
 

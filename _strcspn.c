@@ -1,8 +1,10 @@
-ssize_t _strcspn(const char *s, const char *reject)
+#include "holberton.h"
+
+size_t _strcspn(const char *s, const char *reject)
 {
 	unsigned int x = 0;
 	unsigned int n = 0;
-	ssize_t count = 0;
+	size_t count = 0;
 
 	while (s[x] != '\0')
 	{

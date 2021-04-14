@@ -1,3 +1,4 @@
+#include "holberton.h"
 char *_strchr(const char *s, int x)
 {
 	const char *ptr;
