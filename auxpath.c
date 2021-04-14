@@ -17,7 +17,7 @@ char **getPath(void)
 		return (NULL);
 
 	pathlen = countDelims(envstr);
-	output = _calloc(pathlen + 1, sizeof(char*));
+	output = _calloc(pathlen + 1, sizeof(char *));
 
 	if (output == NULL)
 	{
@@ -26,7 +26,7 @@ char **getPath(void)
 	}
 
 	token = strtok(envstr, ":");
-	*output = token; 
+	*output = token;
 
 	for (x = 1; x < pathlen; x++)
 	{

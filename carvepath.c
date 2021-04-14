@@ -16,7 +16,7 @@ int carvePath(char **args)
 		perror("Command not found");
 		return (0);
 	}
-	else 
+	else
 	{
 		args[0] = the_path;
 		execute_status = execve(args[0], args, environ);
@@ -71,7 +71,7 @@ char *commandPath(char *command, char **path)
 		setFullPath(full_path, *path, command);
 		found_file = access(full_path, F_OK);
 		if (found_file != -1)
-			return(full_path);
+			return (full_path);
 		free(full_path);
 		path++;
 	}

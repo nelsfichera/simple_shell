@@ -15,7 +15,7 @@ char *_getenv(const char *var)
 
 	while (*ptr)
 	{
-		if(strncmp(*ptr, var, var_len) == 0)
+		if (strncmp(*ptr, var, var_len) == 0)
 		{
 			output = *ptr + var_len + 1;
 			return (output);

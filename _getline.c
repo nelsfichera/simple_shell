@@ -47,5 +47,5 @@ char *_getline(void)
 		input[index] = ascii;
 		index++;
 	}
-	return(input);
+	return (input);
 }
