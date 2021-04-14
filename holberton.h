@@ -56,7 +56,8 @@ char *_getenv(const char *name);
 int _cd(char **commands);
 int binExecute(char **commands);
 int _env(char **env_var);
-
+char *getline(void);
+int _getchar(void);
 
 /*main printing functions*/
 char *(*getfunction(char n))(va_list);

@@ -1,3 +1,4 @@
+#include "holberton.h"
 int _getchar(void)
 {
 	char *character, buffer[1];
