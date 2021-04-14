@@ -16,7 +16,7 @@ char **splitline(char *input)
 		return (NULL);
 
 	token = _strtok(input, delimtoken);
-	
+
 	while (token)
 	{
 		tokens[index] = token;
@@ -24,14 +24,14 @@ char **splitline(char *input)
 		index++;
 	}
 	tokens[index] = NULL;
-	return(tokens);
+	return (tokens);
 
 }
 
 char *_modstrtok(char *str, const char *delim, char **save)
 {
 	char *end;
-	
+
 	if (str == NULL)
 		str = *save;
 	if (*str == '\0')
@@ -39,7 +39,7 @@ char *_modstrtok(char *str, const char *delim, char **save)
 		*save = str;
 		return (NULL);
 	}
-	
+
 	str += _strspn(str, delim);
 
 	if (*str == '\0')
@@ -47,7 +47,7 @@ char *_modstrtok(char *str, const char *delim, char **save)
 		*save = str;
 		return (NULL);
 	}
-	
+
 	end = str + _strcspn(str, delim);
 
 	if (*end == '\0')
@@ -55,7 +55,7 @@ char *_modstrtok(char *str, const char *delim, char **save)
 		*save = end;
 		return (str);
 	}
-	
+
 	*end = '\0';
 	*save = end + 1;
 	return (str);
