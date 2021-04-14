@@ -69,6 +69,7 @@ int _env(char **env);
 char *(*getfunction(char n))(va_list);
 int output(char *buffer, int buffer_size, int start, int mode, ...);
 int _printf(const char *format, ...);
+int _putchar(char c);
 
 /*functions being called by type*/
 char *format_binary(va_list);

@@ -37,6 +37,7 @@ int main(int argc, char **argv)
 			getline(&buffer, &bufsize, stdin);
 			/* the parent process should return 1, which is True for the while loop */
 			success = parse(buffer);
+			_putchar('\n');
 		} while (success);
 	}
 	return (0);
