@@ -13,18 +13,6 @@
 /*macros and extern*/
 #define BUFFER_SIZE 1024
 extern char **environ;
-/**
-* struct functions - struct for calling functions
-* @type: identifies which function to use
-* @function: pointer to the function called by type
-*/
-typedef struct functions
-{
-	 char type;
-	 char *(*function)(va_list);
-
-} func_t;
-
 /*str handlers*/
 int _putchar(char c);
 int _strlen(const char *s);
