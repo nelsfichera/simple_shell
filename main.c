@@ -1,12 +1,12 @@
 #include "holberton.h"
 /**
 * main - main dowhile loop to get functions
-* @argc: arg count 
+* @argc: arg count
 * @argv: arg val
 * @envp: env var
 * Return: 0
 */
-int main (int argc, char *argv[], char *envp[])
+int main(int argc, char *argv[], char *envp[])
 {
 	char *input, **args;
 	int status = 1;
@@ -23,7 +23,7 @@ int main (int argc, char *argv[], char *envp[])
 		status = execute_builtin(args, envp);
 		free(input);
 		free(args);
-	}while (status);
+	} while (status);
 
 	return (0);
 }
@@ -32,7 +32,7 @@ static int built_num = 3;
 int (*builtin_function[]) (char **) = {&_cd, &_env, &_builtinexit};
 /**
 * execute_builtin - gets the builtins and executes them
-* @args: args 
+* @args: args
 * @env: env var
 * Return: what the function returns
 */
@@ -46,14 +46,14 @@ int execute_builtin(char **args, char **env)
 	for (index = 0; index < built_num; index++)
 	{
 		if (_strcmp(args[0], "env") == 0)
-			return(_env(env));
+			return (_env(env));
 		if (_strcmp(args[0], "exit") == 0)
 		{
 			exit_ret = _builtinexit(args);
 			exit_args = _atoi(args[1]);
 			if (exit_args < 0)
 			{
-				write (1, "Illegal exit code", 23);
+				write(1, "Illegal exit code", 23);
 				free(args);
 				exit(EXIT_FAILURE);
 			}
@@ -66,8 +66,8 @@ int execute_builtin(char **args, char **env)
 				exit(exit_ret);
 			}
 		}
-			if (_strcmp(args[0], builtin[index]) == 0)
-					return((*builtin_function[index])(args));
+		if (_strcmp(args[0], builtin[index]) == 0)
+		return ((*builtin_function[index])(args));
 	}
 	return (_execute(args));
 }
@@ -84,7 +84,7 @@ int _execute(char **args)
 
 	if (*args == NULL)
 		return (1);
-	
+
 	process_id = fork();
 
 	if (process_id == 0)
@@ -98,8 +98,8 @@ int _execute(char **args)
 				return (0);
 			}
 		}
-		else 
-			return(carvePath(args));
+		else
+			return (carvePath(args));
 	}
 	else if (process_id < 0)
 		perror("Failure to fork");
