@@ -19,12 +19,13 @@ int execute(char **commands)
 	{ /* if child was successfully created */
 		if (execve(commands[0], commands, NULL) == -1)
 		{ /* if execve fails */
-			return (0);
+			perror(commands[0]);
+			return (1);
 		}
 	}
 	if (child_pid < 0)
 	{
-		return (0);
+		return (1);
 	}
 
 	wait(NULL);

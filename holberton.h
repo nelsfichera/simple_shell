@@ -10,7 +10,7 @@
 #include <sys/wait.h>
 #include <stddef.h>
 /*macros and extern*/
-#define BUFFER_SIZE 128
+#define BUFFER_SIZE 1024
 #define DELIM " \n\a\t"
 extern char **environ;
 /*function pointers*/
