@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	else
 	{
 		do {
-			_printf("($) ");
+			_printf("($) \n");
 			/* read */
 			buffer = malloc(BUFFER_SIZE * sizeof(char));
 			if (buffer == NULL)
