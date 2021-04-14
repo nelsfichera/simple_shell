@@ -8,7 +8,7 @@ char **splitline(char *input)
 {
 	char *token, **tokens;
 	int index = 0;
-	const char delimtoken[] = (" \n\r\t\a");
+	const char delimtoken[] = {" \n\r\t\a"};
 
 	tokens = _calloc(98, sizeof(char *));
 
