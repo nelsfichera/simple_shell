@@ -15,11 +15,11 @@ int main (int argc, char *argv[], char *envp[])
 	(void) argv;
 
 	do {
-		if (isatty(STD_FILENO))
+		if (isatty(STDIN_FILENO))
 			write(1, "($) ", 4);
 
-		input = getline();
-		args = line_split(input);
+		input = _getline();
+		args = splitline(input);
 		status = execute_builtin(args, envp);
 		free(input);
 		free(args);
@@ -27,6 +27,9 @@ int main (int argc, char *argv[], char *envp[])
 
 	return (0);
 }
+static char *builtin[] = {"cd", "env", "exit"};
+static int built_num = 3;
+int (*builtin_function[]) (char **) = {&_cd, &_env, &_builtinexit};
 /**
 * execute_builtin - gets the builtins and executes them
 * @args: args 
@@ -35,10 +38,6 @@ int main (int argc, char *argv[], char *envp[])
 */
 int execute_builtin(char **args, char **env)
 {
-	static char *builtin[] = {"cd", "env", "exit"};
-	static int built_num = 3;
-
-	int (*builtin_function) (char **) = { &_cd, &_env, &_exit};
 
 	int index, exit_ret, exit_args = 0;
 
@@ -50,7 +49,7 @@ int execute_builtin(char **args, char **env)
 			return(_env(env));
 		if (_strcmp(args[0], "exit") == 0)
 		{
-			exit_ret = _exit(args);
+			exit_ret = _builtinexit(args);
 			exit_args = _atoi(args[1]);
 			if (exit_args < 0)
 			{
@@ -67,8 +66,8 @@ int execute_builtin(char **args, char **env)
 				exit(exit_ret);
 			}
 		}
-			if (_strcmp(args[0], builtin[index] == 0)
-					return((*builtin[index])(args));
+			if (_strcmp(args[0], builtin[index]) == 0)
+					return((*builtin_function[index])(args));
 	}
 	return (_execute(args));
 }
