@@ -25,8 +25,7 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		do
-		{
+		do {
 			_printf("($) ");
 			/* read */
 			buffer = malloc(BUFFER_SIZE * sizeof(char));
