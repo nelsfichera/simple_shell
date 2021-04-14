@@ -33,6 +33,7 @@ int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
 char *_strdup(char *str);
 char *_strtok(char *str, char *separator, int flag);
+char *_strchr(const char *s, int x);
 /*memory*/
 char *_memset(char *addy, char value, unsigned int size);
 void *_calloc(unsigned int members, int size);
