@@ -23,7 +23,7 @@ char **splitline(char *input)
 		token = strtok(NULL, delim);
 		index++;
 	}
-	tokens[index];
+	tokens[index] = NULL;
 	return(tokens);
 
 }

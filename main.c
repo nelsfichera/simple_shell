@@ -100,7 +100,7 @@ int _execute(char **args)
 			}
 		}
 		else 
-			return(carvepath(args));
+			return(carvePath(args));
 	}
 	else if (process_id < 0)
 		perror("Failure to fork");

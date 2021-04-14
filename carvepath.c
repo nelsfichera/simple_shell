@@ -9,7 +9,7 @@ int carvePath(char **args)
 	char *the_path;
 	int execute_status;
 
-	the_path = find_path(args[0]);
+	the_path = findPath(args[0]);
 
 	if (the_path == NULL)
 	{
