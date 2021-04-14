@@ -66,17 +66,4 @@ int _getchar(void);
 /*main printing functions*/
 char *(*getfunction(char n))(va_list);
 int output(char *buffer, int buffer_size, int start, int mode, ...);
-int _printf(const char *format, ...);
-
-/*functions being called by type*/
-char *format_binary(va_list);
-char *format_char(va_list);
-char *format_decimal(va_list);
-char *format_hex(va_list);
-char *format_octal(va_list);
-char *format_percent();
-char *format_reverse(va_list);
-char *format_rot13(va_list);
-char *format_string(va_list);
-char *format_unsigned(va_list);
 #endif
