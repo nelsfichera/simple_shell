@@ -9,34 +9,10 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <stddef.h>
+#include <errno.h>
 /*macros and extern*/
-#define BUFFER_SIZE 128
-#define DELIM " \n\a\t"
+#define BUFFER_SIZE 1024
 extern char **environ;
-/*function pointers*/
-/*printf */
-/**
-* struct functions - struct for calling functions
-* @type: identifies which function to use
-* @function: pointer to the function called by type
-*/
-typedef struct functions
-{
-	 char type;
-	 char *(*function)(va_list);
-
-} func_t;
-/*function pointers*/
-/**
-* struct builtin - structure for pointers to built in functions
-* @command: commands
-* @function: function
-*/
-typedef struct builtin
-{
-	char **command;
-	void (*function)(char *);
-} built_in;
 /*str handlers*/
 int _putchar(char c);
 int _strlen(char *s);
@@ -49,20 +25,24 @@ char *_strtok(char *str, char *separator, int flag);
 char *_memset(char *addy, char value, unsigned int size);
 void *_calloc(unsigned int members, int size);
 /*main functions*/
-int execute(char **commands);
-int parse(char *inputstring);
-int checkbuiltin(char **command);
-int isPath(char *path);
-int isBinCommand(char **command);
+int main (int argc, char *argv[], char *envp[]);
+int execute_builtin(char **args, char **env);
+int _execute(char **args);
+int carvePath(char **args);
+char *findPath(char *command);
+char *commandPath(char *command, char **path);
+void setFullPath(char *destination, char *path, char *command);
+char **getPath(void);
+unsigned int countDelims(char *str);
 /*builtins*/
-int pathmod(char *compath);
+
 int _printenv(char **env);
 int _atoi(char *str);
 int _builtinexit(char **arguments);
-char *_getenv(char *name, char **env);
+char *_getenv(const char *name);
 int _cd(char **commands);
 int binExecute(char **commands);
-int _env(char **env);
+int _env(char **env_var);
 
 
 /*main printing functions*/
