@@ -19,7 +19,7 @@ int _getchar(void)
 	return (EOF);
 }
 
-char *getline(void)
+char *_getline(void)
 {
 	char *input = NULL;
 	int ascii, index = 0, buffer_size = BUFFER_SIZE;

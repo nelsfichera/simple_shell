@@ -4,14 +4,13 @@
 * @s: the chars to be counted
 * Return: the number of chars in a str
 */
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int x = 0;
 
-	if (*s != '\0')
+	while (s[x] != '\0')
 	{
-		x = _strlen(s + 1);
-		x = x + 1;
+		x++;
 	}
 	return (x);
 }

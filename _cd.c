@@ -11,10 +11,10 @@ int _cd(char **commands)
 	int cwd_size = 0;
 
 	if (!commands[1] || (commands[1][0] == '~' && !commands[1][1]))
-		chdir(_getenv("HOME", NULL));
+		chdir(_getenv("HOME"));
 	else if (commands[1][0] == '-' && !commands[1][1])
 	{
-		chdir(_getenv("PREVPWD", NULL));
+		chdir(_getenv("PREVPWD"));
 		getcwd(cwd, sizeof(cwd));
 		for (index = 0; cwd[index] != '\0'; index++)
 			cwd_size++;

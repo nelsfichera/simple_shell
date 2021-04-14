@@ -4,7 +4,7 @@
 * @var: the name of the variable
 * Return: variable on success, null on failure
 */
-char *_getenv(char *var)
+char *_getenv(const char *var)
 {
 	int var_len = _strlen(var);
 
@@ -15,9 +15,9 @@ char *_getenv(char *var)
 
 	while (*ptr)
 	{
-		if(_strcmp(*ptr, name) == 0)
+		if(strncmp(*ptr, var, var_len) == 0)
 		{
-			output = *ptr + len + 1;
+			output = *ptr + var_len + 1;
 			return (output);
 		}
 		ptr++;
@@ -37,7 +37,7 @@ int _env(char **env_var)
 
 	for (index = 0; env_var[index] != NULL; index++)
 	{
-		env_var_len = _strlen(env[index]);
+		env_var_len = _strlen(env_var[index]);
 		write(1, env_var[index], env_var_len);
 		write(1, "\n", 1);
 	}

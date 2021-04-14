@@ -1,6 +1,6 @@
 unsigned int _strspn(char *s, const char *find)
 {
-	unsigned int x, n = 0;
+	unsigned int x = 0, n = 0;
 	int count = 0;
 
 	while (s[x] != 0)

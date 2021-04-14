@@ -27,13 +27,17 @@ typedef struct functions
 
 /*str handlers*/
 int _putchar(char c);
-int _strlen(char *s);
+int _strlen(const char *s);
 char *_strcat(char *str1, char *str2);
 int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
 char *_strdup(char *str);
-char *_strtok(char *str, char *separator, int flag);
+char *_strtok(char *str, const char *delimiters);
+char *_modstrtok(char *str, const char *delim, char **save);
+char **splitline(char *input);
 char *_strchr(const char *s, int x);
+unsigned int _strspn(char *s, const char *find);
+size_t _strcspn(const char *s, const char *reject);
 /*memory*/
 char *_memset(char *addy, char value, unsigned int size);
 void *_calloc(unsigned int members, int size);
@@ -52,11 +56,11 @@ unsigned int countDelims(char *str);
 int _printenv(char **env);
 int _atoi(char *str);
 int _builtinexit(char **arguments);
-char *_getenv(const char *name);
+char *_getenv(const char *var);
 int _cd(char **commands);
 int binExecute(char **commands);
 int _env(char **env_var);
-char *getline(void);
+char *_getline(void);
 int _getchar(void);
 
 /*main printing functions*/
