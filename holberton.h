@@ -44,7 +44,7 @@ unsigned int countDelims(char *str);
 int _printenv(char **env);
 int _atoi(char *str);
 int _builtinexit(char **arguments);
-char *_getenv(const char *var);
+char *_getenv(char *var);
 int _cd(char **commands);
 int binExecute(char **commands);
 int _env(char **env_var);
