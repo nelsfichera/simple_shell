@@ -30,7 +30,7 @@ size_t _strcspn(const char *s, const char *reject);
 char *_memset(char *addy, char value, unsigned int size);
 void *_calloc(unsigned int members, int size);
 /*main functions*/
-int main (int argc, char *argv[], char *envp[]);
+int main(int argc, char *argv[], char *envp[]);
 int execute_builtin(char **args, char **env);
 int _execute(char **args);
 int carvePath(char **args);
