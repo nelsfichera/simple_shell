@@ -77,6 +77,14 @@ char *commandPath(char *command, char **path)
 	}
 	return (NULL);
 }
+/**
+* setFullPath  - creates a full path
+* @destination: where the path ends up
+* @path: the path
+* @command: the command
+* Return: void
+*/
+
 void setFullPath(char *destination, char *path, char *command)
 {
 	_strcat(destination, path);

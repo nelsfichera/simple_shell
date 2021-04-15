@@ -1,4 +1,10 @@
 #include "holberton.h"
+/**
+* _strcspn - strcspn but not
+* @s: the string
+* @reject: no no no
+* Return: count
+*/
 
 size_t _strcspn(const char *s, const char *reject)
 {

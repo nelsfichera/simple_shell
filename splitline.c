@@ -27,7 +27,13 @@ char **splitline(char *input)
 	return (tokens);
 
 }
-
+/**
+* _modstrtok - strtok but return pointer!
+* @str: the string
+* @delim: delimiters
+* @save: pointer
+* Return: tokenized string
+*/
 char *_modstrtok(char *str, const char *delim, char **save)
 {
 	char *end;
@@ -60,7 +66,12 @@ char *_modstrtok(char *str, const char *delim, char **save)
 	*save = end + 1;
 	return (str);
 }
-
+/**
+* _strtok - calls the other strtok
+* @str: the string
+* @delimeters: delimiters
+* Return: result of other function
+*/
 char *_strtok(char *str, const char *delimeters)
 {
 	static char *originalstr;

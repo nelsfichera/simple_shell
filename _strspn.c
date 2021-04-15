@@ -1,3 +1,9 @@
+/**
+* _strspn - strspn but not
+* @s: the string
+* @find: the character to find
+* Return: how many
+*/
 unsigned int _strspn(char *s, const char *find)
 {
 	unsigned int x = 0, n = 0;

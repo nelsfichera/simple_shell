@@ -1,4 +1,9 @@
 #include "holberton.h"
+/**
+* _getchar - gets a char
+* Return: void
+*/
+
 int _getchar(void)
 {
 	char *character, buffer[1];
@@ -18,7 +23,10 @@ int _getchar(void)
 	}
 	return (EOF);
 }
-
+/**
+* _getline - get a line
+* Return: void
+*/
 char *_getline(void)
 {
 	char *input = NULL;
