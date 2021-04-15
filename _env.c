@@ -6,7 +6,7 @@
 */
 char *_getenv(char *var)
 {
-
+	int var_len = _strlen(var);
 	char **ptr;
 	char *output;
 
