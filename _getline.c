@@ -41,7 +41,7 @@ char *_getline(void)
 	}
 	while (1)
 	{
-		ascii = getchar();
+		ascii = _getchar();
 		if (ascii == EOF)
 		{
 			free(input);
